@@ -1,0 +1,54 @@
+name: newsapp
+description: A new Flutter application.
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  circular_profile_avatar: ^1.0.6
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^0.1.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+
+  uses-material-design: true
+  assets:
+    - images/trending.png
+    - images/home-header.png
+    - images/logo.png
+    - images/profil.png
+    - images/background.png
+    - images/kategori-1.png
+    - images/kategori-2.png
+    - images/kategori-3.png
+    - images/kategori-4.png
+    - images/kategori-5.png
+    - images/kategori-6.png
+    - images/logo-cnn.png
+    - images/logo-detik.png
+    - images/logo-kompas.png
+    - images/lokal-1.png
+    - images/lokal-2.png
+    - images/lokal-3.png
+    - images/lokal-4.png
+    - images/lokal-5.png
+    - images/lokal-6.png
+    - images/umum-1.png
+    - images/umum-2.png
+    - images/umum-3.png
+    - images/umum-4.png
+    - images/umum-5.png
+    - images/umum-6.png
+
+  fonts:
+     - family: Inter
+       fonts:
+         - asset: fonts/Inter-Regular.ttf
+           weight: 400
