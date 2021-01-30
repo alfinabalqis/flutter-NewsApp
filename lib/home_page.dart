@@ -17,6 +17,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
+        elevation: 0.0,
         backgroundColor: Color.fromRGBO(255,151,55,1),
         title: Image.asset(
           "images/logo.png",
@@ -29,7 +30,7 @@ class HomePage extends StatelessWidget {
           children: <Widget>[
             UserAccountsDrawerHeader(
               accountName: Text('Alexa Aurelia'),
-              accountEmail: Text('alexaaurelia@gmail.com'),
+              accountEmail: Text('alexa@gmail.com'),
               currentAccountPicture: new Container(
                 margin: EdgeInsets.all(10),
                 width: 34,
@@ -77,14 +78,18 @@ class HomePage extends StatelessWidget {
           length: 3,
           child: new Scaffold(
             appBar: new AppBar(
+              backgroundColor: Colors.white,
+              elevation: 0.0,
+              automaticallyImplyLeading : false,
               actions: <Widget>[],
               title: new TabBar(
                 tabs: [
-                  new Tab(text: 'Home'),
-                  new Tab(text: 'Berita Lokal'),
-                  new Tab(text: 'Berita Umum',)
+                  new Tab(child: Text('Home', style: TextStyle(color:  Color.fromRGBO(255, 155, 55, 1), fontSize: 15)),),
+                  new Tab(child: Text('Berita Lokal',style: TextStyle(color:  Color.fromRGBO(255, 155, 55, 1), fontSize: 15)),),
+                  new Tab(child: Text('Berita Umum',style: TextStyle(color:  Color.fromRGBO(255, 155, 55, 1), fontSize: 15)),)
                 ],
                 indicatorColor: Color.fromRGBO(255,151,55,1),
+                labelPadding: EdgeInsets.symmetric(horizontal: 2.0),
               ),
             ),
             body: new TabBarView(

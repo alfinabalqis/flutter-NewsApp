@@ -4,18 +4,16 @@ class HomeNewsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: new ListView(
+      backgroundColor: Colors.white,
+      body: new Column(
         children: <Widget>[
+          new Image.asset('images/home-header.png',),
           new Container(
-            padding: EdgeInsets.all(0),
-            child: new Image.asset('images/home-header.png'),
-          ),
-          new Container(
-            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.fromLTRB(5, 25, 5, 25),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 new Container(
+                    alignment: Alignment(-1, 0),
                   child: new Text('Sumber Berita',
                     style: TextStyle(
                       fontFamily: 'Inter',
@@ -23,7 +21,7 @@ class HomeNewsPage extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       color: Color.fromRGBO(255,151,55,1)
                     ),),
-                  padding: EdgeInsets.only(bottom: 15)
+                  padding: EdgeInsets.only(left: 15,bottom: 20)
                 ),
                 new Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -37,11 +35,12 @@ class HomeNewsPage extends StatelessWidget {
             ),
           ),
           new Container(
-            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.fromLTRB(5, 5, 5, 0),
             child: Column(
               children: <Widget>[
                 new Container(
-                  padding: EdgeInsets.only(bottom: 15),
+                  alignment: Alignment(-1, 0),
+                  padding: EdgeInsets.only(left: 15,bottom: 20),
                   child: new Text('Trending',
                     style: TextStyle(
                         fontFamily: 'Inter',
@@ -51,6 +50,7 @@ class HomeNewsPage extends StatelessWidget {
                   ),
                 ),
                 new Container(
+                  alignment: Alignment(0, 0),
                   child: new Image.asset('images/trending.png'),
                 )
               ],

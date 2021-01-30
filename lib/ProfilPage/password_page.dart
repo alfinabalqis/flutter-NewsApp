@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newsapp/home_page.dart';
 
 class PasswordPage extends StatefulWidget {
   @override
@@ -18,22 +19,43 @@ class _PasswordPageState extends State<PasswordPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(255,151,55,1),
-        title: Image.asset(
-          "images/logo.png",
-          width: 35,
-          height: 35,),
-        centerTitle: true,
+        backgroundColor: Colors.white,
+        elevation: 0.0,
+          iconTheme: IconThemeData(
+            color: Color.fromRGBO(255,151,55,1), //change your color here
+          ),
+        title: Text('Ganti Kata Sandi', style: TextStyle(color: Color.fromRGBO(255,151,55,1), fontSize: 18),)
       ),
       backgroundColor: Colors.white,
       body: Container(
         padding: EdgeInsets.all(24),
         child: ListView(
           children: <Widget>[
+            SizedBox(height: 10,),
             buildPassword(),
+            SizedBox(height: 15,),
             newPassword(),
+            SizedBox(height: 15,),
             confirmNewPassword(),
-            
+            SizedBox(height: 15,),
+            new Padding(
+              padding: const EdgeInsets.only(top: 5.0),
+              child: Material(
+                borderRadius: BorderRadius.circular(10.0),
+                child: MaterialButton(
+                  minWidth: 90.0,
+                  height: 40.0,
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(HomePage.tag);
+                  },
+                  color: Color.fromRGBO(255,151,55,1),
+                  child: Text('Simpan', style: TextStyle(
+                      fontFamily: 'Inter',
+                      fontSize: 15,
+                      color: Colors.white)),
+                ),
+              ),
+            )
           ],
         )
       ),

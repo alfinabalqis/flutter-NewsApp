@@ -8,25 +8,30 @@ class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        elevation: 0.0,
+        backgroundColor: Colors.white,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: <Widget>[
+            new FlatButton(
+              child: Text('Skip',
+              style: TextStyle(
+                fontFamily: 'Inter',
+                decoration: TextDecoration.underline,
+                color: Color.fromRGBO(255,151,55,1),),
+            ),
+              onPressed: () {
+                Navigator.of(context).pushNamed(HomePage.tag);
+              },)
+          ],
+        ),
+      ),
+      body: new Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            new Padding(padding: const EdgeInsets.all(0),
-            child: new FlatButton(
-              child: Text(
-                'Skip',
-                style: TextStyle(
-                  fontFamily: 'Inter',
-                  decoration: TextDecoration.underline,
-                  color: Color.fromRGBO(255,151,55,1),
-                ),
-              ),
-
-              onPressed: () {
-                Navigator.of(context).pushNamed(HomePage.tag);
-              },),
-            ),
             new Text('Selamat datang di NewsApp!',
               style: TextStyle(
                 fontFamily: 'Inter',

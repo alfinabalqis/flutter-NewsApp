@@ -1,4 +1,7 @@
+import 'package:circular_profile_avatar/circular_profile_avatar.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:newsapp/ProfilPage/password_page.dart';
 import 'package:newsapp/home_page.dart';
 
@@ -16,7 +19,7 @@ class _ProfilePageState extends State<ProfilePage> {
       decoration: InputDecoration(
         labelText: 'Nama Pengguna',
         hintText: 'Alexa Aurelia',
-        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        contentPadding: EdgeInsets.all(10),
       ),
     );
 
@@ -26,7 +29,7 @@ class _ProfilePageState extends State<ProfilePage> {
       decoration: InputDecoration(
         labelText: 'Email',
         hintText: 'alexaaurelia@gmail.com',
-        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        contentPadding: EdgeInsets.all(10),
       ),
     );
 
@@ -36,7 +39,7 @@ class _ProfilePageState extends State<ProfilePage> {
       decoration: InputDecoration(
         labelText: 'Nomor Telepon',
         hintText: '085784365376',
-        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        contentPadding: EdgeInsets.all(10),
       ),
     );
 
@@ -46,7 +49,7 @@ class _ProfilePageState extends State<ProfilePage> {
       decoration: InputDecoration(
         labelText: 'Lokasi',
         hintText: 'Jakarta',
-        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        contentPadding: EdgeInsets.all(10),
       ),
     );
 
@@ -74,7 +77,7 @@ class _ProfilePageState extends State<ProfilePage> {
             Navigator.of(context).pushNamed(HomePage.tag);
           },
           color: Color.fromRGBO(255,151,55,1),
-          child: Text('simpan', style: TextStyle(
+          child: Text('Simpan', style: TextStyle(
               fontFamily: 'Inter',
               fontSize: 15,
               color: Colors.white)),
@@ -84,48 +87,48 @@ class _ProfilePageState extends State<ProfilePage> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(255,151,55,1),
-        title: Image.asset(
-          "images/logo.png",
-          width: 35,
-          height: 35,),
-        centerTitle: true,
+        backgroundColor: Colors.white,
+        elevation: 0.0,
+        iconTheme: IconThemeData(
+          color: Color.fromRGBO(255,151,55,1), //change your color here
+        ),
       ),
       backgroundColor: Colors.white,
       body: new Center(
         child: ListView(
           padding: EdgeInsets.only(left: 20, right: 20),
           children: <Widget>[
-            new Container(
-                width: 190.0,
-                height: 190.0,
-                decoration: new BoxDecoration(
-                  shape: BoxShape.circle,
-                  image: new DecorationImage(
-                      image: new AssetImage('images/profil.png')
-                  ),
-                )
-            ),
-            new Container(
-              margin: EdgeInsets.zero,
-              child: new Text('Ganti Foto Profil',
-              style: TextStyle(
-                fontFamily: 'Inter',
-                color: Color.fromRGBO(255,151,55,1),
+            Container(
+              margin: EdgeInsets.only(top: 20),
+              width: 150,
+              height: 150,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('images/profil.png'),
+                ),
               ),
-              textScaleFactor: 1.5,),
             ),
-            SizedBox(height: 15.0,),
-            name,
+            Container(
+              padding: EdgeInsets.only(top: 0, bottom: 30),
+              child: Center(
+                child: Text('Ganti Foto Profil',
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Color.fromRGBO(255,151,55,1),
+                  ),
+                ),
+              )
+            ),
             SizedBox(height: 20,),
+            name,
+            SizedBox(height: 5,),
             email,
             SizedBox(height: 20,),
             telp,
             SizedBox(height: 20,),
             location,
-            SizedBox(height: 20,),
+            SizedBox(height: 5,),
             changePass,
-            SizedBox(height: 20,),
             passwordButton
           ],
         ),
