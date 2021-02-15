@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newsapp/detailnews_page.dart';
 
 class HomeNewsPage extends StatelessWidget {
   @override
@@ -49,10 +50,17 @@ class HomeNewsPage extends StatelessWidget {
                         color: Color.fromRGBO(255,151,55,1)),
                   ),
                 ),
-                new Container(
-                  alignment: Alignment(0, 0),
-                  child: new Image.asset('images/trending.png'),
-                )
+                new GestureDetector(
+                  onTap: (){
+                    Route route = MaterialPageRoute(builder: (context) => DetailNewsPage());
+                    Navigator.push(context, route);
+                  },
+                  child:  new Container(
+                    alignment: Alignment(0, 0),
+                    child: new Image.asset('images/trending.png'),
+                  )
+                ),
+
               ],
             ),
           )
